@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello electron!!!!!!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <title>First Electron App</title>
+</head>
+
+<body>
+    <h1>Hello electron!!!!!!</h1> We are using node
+    <script>
+        document.write(process.versions.node)
+    </script>, Chrome
+    <script>
+        document.write(process.versions.chrome)
+    </script>, and Electron
+    <script>
+        document.write(process.versions.electron)
+    </script>.
     <div>
         <input type="button" value="submit" onclick="play()">
+    </div>
+    <div>
+        <input type="button" value="submit" onclick="stock()">
     </div>
     <script type="text/javascript">
         function play() {
             window.location.href = "game.html"
         }
+        function stock() {
+            window.location.href = "stock.html"
+        }
     </script>
-  </body>
+</body>
+
 </html>
-
-
