@@ -3,11 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>First Electron App</title>
+    <title>天行者工具</title>
+    <style type="text/css">
+        textarea {
+            width: 100%;
+            border: none;
+            background: #eee;
+            margin: 10px 0;
+            padding: 0;
+            outline: none;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello electron!!!!!!</h1> We are using node
+    <h2>研发工具箱 v0.1.0</h2> node
     <script>
         document.write(process.versions.node)
     </script>, Chrome
@@ -18,6 +28,8 @@
         document.write(process.versions.electron)
     </script>.
     <div>
+        <textarea rows="10"></textarea>
+        <button>提交笔记</button>
         <input type="button" value="游戏" onclick="play()">
     </div>
     <div>
@@ -31,6 +43,7 @@
             window.location.href = "stock.html"
         }
     </script>
+<script type="text/javascript" src="write.js"></script>
 </body>
 
 </html>
