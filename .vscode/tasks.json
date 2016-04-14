@@ -30,7 +30,8 @@
 
 {
  "version": "0.1.0",
- "command": "${workspaceRoot}\\node_modules\\electron-prebuilt\\dist\\electron.exe",
+ "isShellCommand": true,
+ "command": "electron",
  "args": ["."]
 }
 
