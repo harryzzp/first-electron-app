@@ -14,9 +14,10 @@
             outline: none;
         }
     </style>
+    <script src="bower_components/angular/angular.min.js"></script>
 </head>
 
-<body>
+<body ng-app="first-electron-app">
     <h2>研发工具箱 v0.1.0</h2> node
     <script>
         document.write(process.versions.node)
@@ -30,11 +31,13 @@
     <div>
         <textarea id="text_note" rows="10"></textarea>
         <button id="button_note">提交笔记</button>
-        <button id="button_game" >游戏</button>
-        <button id="button_stock" >股票</button>
+        <button id="button_game">游戏</button>
+        <button id="button_stock">股票</button>
     </div>
-
-    <script type="text/javascript" src="index.js"></script>
+    <div>
+        <input type="text" ng-model="input" />
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
