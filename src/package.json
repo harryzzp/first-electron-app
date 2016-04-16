@@ -1,0 +1,9 @@
+{
+  "name": "first-electron-app",
+  "version": "0.1.0",
+  "main": "src/main.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-electron": "0.0.17"
+  }
+}

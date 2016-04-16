@@ -9,7 +9,7 @@
             "args": [],
             "cwd": "${workspaceRoot}/.",
             // next line is very important
-            "runtimeExecutable": "${workspaceRoot}/src/node_modules/electron-prebuilt/dist/electron.exe",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/electron-prebuilt/dist/electron.exe",
             "env": { }, 
             "sourceMaps": false
         } 
