@@ -2,6 +2,7 @@
     "version": "0.1.0",
     "configurations": [
         { 
+            "request": "launch",
             "name": "Launch Electron App",
             "type": "node",
             "program": "${workspaceRoot}/src/main.js", // important
