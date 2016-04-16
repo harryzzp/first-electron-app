@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>天行者工具</title>
+    <style type="text/css">
+        textarea {
+            width: 100%;
+            border: none;
+            background: #eee;
+            margin: 10px 0;
+            padding: 0;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>研发工具箱 v0.1.0</h2> node
+    <script>
+        document.write(process.versions.node)
+    </script>, Chrome
+    <script>
+        document.write(process.versions.chrome)
+    </script>, and Electron
+    <script>
+        document.write(process.versions.electron)
+    </script>.
+    <div>
+        <textarea id="text_note" rows="10"></textarea>
+        <button id="button_note">提交笔记</button>
+        <button id="button_game" >游戏</button>
+        <button id="button_stock" >股票</button>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

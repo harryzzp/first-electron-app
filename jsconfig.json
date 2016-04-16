@@ -6,8 +6,8 @@
 		"module": "commonjs"
 	},
 	"exclude": [
-		"node_modules",
-		"bower_components",
+		"src/node_modules",
+		"src/bower_components",
 		"jspm_packages",
 		"tmp",
 		"temp"
