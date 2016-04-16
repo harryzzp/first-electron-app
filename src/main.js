@@ -57,7 +57,6 @@ app.on('ready', function () {
     var http = require('http')
     var net = require('net')
     var client = http.createClient
-    
     console.log(http)
     console.log(client)
 });
