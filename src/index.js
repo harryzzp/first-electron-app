@@ -5,6 +5,7 @@
 var remote = require('remote');
 var dialog = remote.require('dialog');
 var fs = require('fs');
+var iconv_lite = require('iconv-lite')
 
 window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js')
 
@@ -19,12 +20,15 @@ $(function() {
       properties: ['openFile'],
       filters: [{
         name: 'Text',
-        extensions: ['txt']
+        extensions: ['txt', 'xml']
       }],
     }, function(fileNames) {
       if(fileNames) {
         var text = fs.readFileSync(fileNames[0]);
-        $('#output').text(text);
+        //对GBK编码进行转换
+        str = iconv_lite.decode(text, 'gbk');
+        buf = iconv_lite.encode(str, 'utf8');
+        $('#output').text(buf);
       }
     })
   })
