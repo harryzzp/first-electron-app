@@ -3,14 +3,18 @@
 // })
 
 var remote = require('remote');
-var dialog = remote.require('dialog');
+var dialog = remote.require('dialog')
 var fs = require('fs');
 var iconv_lite = require('iconv-lite')
 
 window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js')
 
+var call_spark = require('./spark_exec.js')
+
 $(function() {
   $('#button').click(function() {
+    alert('start');
+    call_spark.callSpark()
     alert("It's me")
   })
 
