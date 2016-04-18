@@ -28,8 +28,8 @@ $(function () {
       str = iconv_lite.decode(data, 'gbk');
       buf = iconv_lite.encode(str, 'utf8');
       // console.log('stdout: ' + buf);
-      // $('#output').text(buf);
-      $('#log_output').text(buf);
+      // $('#log_output').text(buf);
+      $('#log_output').append('<p>' + buf + '</p>');
       fs.appendFile("result.log", buf, function (error) {
         if (error) {
           // 出现错误
