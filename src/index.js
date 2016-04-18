@@ -27,7 +27,9 @@ $(function () {
     ls.stdout.on('data', function (data) {
       str = iconv_lite.decode(data, 'gbk');
       buf = iconv_lite.encode(str, 'utf8');
-      console.log('stdout: ' + buf);
+      // console.log('stdout: ' + buf);
+      // $('#output').text(buf);
+      $('#log_output').text(buf);
       fs.appendFile("result.log", buf, function (error) {
         if (error) {
           // 出现错误
@@ -37,7 +39,7 @@ $(function () {
     });
 
     ls.stderr.on('data', function (data) {
-      console.log('stderr: ' + data);
+      // console.log('stderr: ' + data);
     });
 
     ls.on('exit', function (code) {
