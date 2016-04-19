@@ -3,23 +3,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>天行者工具</title>
+  <title>研发工具</title>
 </head>
 
 <body ng-app="first-electron-app">
-  <h3>研发工具</h3> node.js
+  <h3>日志查询</h3> node.js
   <script>
     document.write(process.version)
   </script>
   & electron
   <script>
     document.write(process.versions['electron'])
-  </script>.
+  </script>
 
   <div>
-    CPU数量：<input id="num_of_cores" value="4" /> 文件路径：
-    <input id="file_path" value="D:\\zzp" /> 搜索内容：
-    <input id="search_text" value="28018167" />
+    spark.master：<input id="master" value="local[4]" /> 
+    Spark.driver.memory：<input id="driver_memory" value="6g" />
+    spark.serializer：<input id="spark_serializer" value="org.apache.spark.serializer.KryoSerializer" />
+    文件路径：<input id="file_path" value="D:\\zzp" /> 
+    搜索内容：<input id="search_text" value="28018167" />
     <button id="button">点击开始</button>
   </div>
   <div>

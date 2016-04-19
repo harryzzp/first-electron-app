@@ -14,11 +14,13 @@ window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js
 
 $(function () {
   $('#button').click(function () {
-    var num_of_cores = $('#num_of_cores').val()
+    var master = $('#master').val()
+    var driver_memory = $('#driver_memory').val()
+    var serializer = $('#serializer').val()
     var file_path = $('#file_path').val()
     var search_text = $('#search_text').val()
-    var command = 'spark-submit --class org.glsc.FullLog --master local['
-      + num_of_cores + '] D:\\IdeaProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
+    var command = 'spark-submit --class org.glsc.FullLog --master '
+      + num_of_cores + ' D:\\IdeaProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
       + file_path + ' ' + search_text
 
     alert(command)
