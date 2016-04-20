@@ -17,16 +17,25 @@
   </script>
 
   <div>
-    spark.master：<input id="master" value="local[4]" /> 
-    Spark.driver.memory：<input id="driver_memory" value="6g" />
-    spark.serializer：<input id="spark_serializer" value="org.apache.spark.serializer.KryoSerializer" />
-    文件路径：<input id="file_path" value="D:\\zzp" /> 
-    搜索内容：<input id="search_text" value="28018167" />
-    <button id="button">点击开始</button>
+    日志目录：<input id="log_dir" value="D:\\logss\\newwt" />
   </div>
   <div>
-    <button id="chooseFile">选择文件</button>
-    文件编码：
+    spark.master：<input id="master" value="local[4]" />
+  </div>
+  <div>
+    spark.driver.memory：<input id="driver_memory" value="6g" />
+  </div>
+  <div>
+    spark.serializer：<input id="spark_serializer" value="org.apache.spark.serializer.KryoSerializer" />
+  </div>
+  <div>
+    搜索内容：<input id="search_text" value="915001" />
+  </div>
+  <div>
+    <button id="log_button">点击开始</button>
+  </div>
+  <div>
+    <button id="chooseFile">选择文件</button> 文件编码：
     <select id="encoding_list" onchange="changeEncoding(this)">
       <option value="utf8">UTF-8</option>
       <option value="gbk">GBK</option>
