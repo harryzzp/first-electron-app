@@ -66,13 +66,13 @@ $(function () {
       + '--conf spark.eventLog.enabled=false '
       + '--conf spark.serializer=org.apache.spark.serializer.KryoSerializer '
       + '--conf spark.executor.extraJavaOptions="-XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit -XX:CMSInitiatingOccupancyFraction=10" '
-      + 'D:\\IdeaProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
+      + 'D:\\VisualStudioCodeProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
       + '"' + tempFile + '" "' + search_text + '"';
 
     alert("即将执行：" + command)
 
     var ls = cp.exec(command, {
-      encoding: 'utf8',
+      encoding: 'gbk',
       timeout: 0,
       maxBuffer: 20000 * 1024,
       killSignal: 'SIGTERM',
@@ -82,13 +82,13 @@ $(function () {
 
     ls.stdout.on('data', function (data) {
       if (data.indexOf(search_text) != -1) {
-        // str = iconv_lite.decode(data, 'gbk');
-        // buf = iconv_lite.encode(str, 'utf8');
-        $('#log_output').append('<p>' + data + '</p>');
-        fs.appendFile("result.log", data, function (error) {
+        str = iconv_lite.decode(data, 'gbk');
+        buf = iconv_lite.encode(str, 'utf8');
+        $('#log_output').append('<p>' + buf + '</p>');
+        fs.appendFile("result.log", buf, function (error) {
           if (error) {
             // 出现错误
-            $('#log_output').append('<p>' + data + '</p>');
+            $('#log_output').append('<p>' + buf + '</p>');
           }
         });
       }
