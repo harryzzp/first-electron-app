@@ -46,6 +46,7 @@ $(function () {
     var tempFile = 'D:\\temp\\' + (new Date().getFullYear() + '.log');
 
     if (fs.existsSync(tempFile)) {
+      alert('del ' + tempFile)
       fs.unlinkSync(tempFile);
     }
 
@@ -71,7 +72,7 @@ $(function () {
     alert("即将执行：" + command)
 
     var ls = cp.exec(command, {
-      encoding: 'gbk',
+      encoding: 'utf8',
       timeout: 0,
       maxBuffer: 20000 * 1024,
       killSignal: 'SIGTERM',
@@ -81,13 +82,13 @@ $(function () {
 
     ls.stdout.on('data', function (data) {
       if (data.indexOf(search_text) != -1) {
-        str = iconv_lite.decode(data, 'gbk');
-        buf = iconv_lite.encode(str, 'utf8');
-        $('#log_output').append('<p>' + buf + '</p>');
-        fs.appendFile("result.log", buf, function (error) {
+        // str = iconv_lite.decode(data, 'gbk');
+        // buf = iconv_lite.encode(str, 'utf8');
+        $('#log_output').append('<p>' + data + '</p>');
+        fs.appendFile("result.log", data, function (error) {
           if (error) {
             // 出现错误
-            $('#log_output').append('<p>' + buf + '</p>');
+            $('#log_output').append('<p>' + data + '</p>');
           }
         });
       }
