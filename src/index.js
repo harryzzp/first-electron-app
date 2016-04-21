@@ -46,7 +46,7 @@ $(function () {
     var tempFile = 'D:\\temp\\' + (new Date().getFullYear() + '.log');
 
     if (fs.existsSync(tempFile)) {
-      alert('del ' + tempFile)
+      alert('删除 ' + tempFile)
       fs.unlinkSync(tempFile);
     }
 
@@ -66,7 +66,7 @@ $(function () {
       + '--conf spark.eventLog.enabled=false '
       + '--conf spark.serializer=org.apache.spark.serializer.KryoSerializer '
       + '--conf spark.executor.extraJavaOptions="-XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit -XX:CMSInitiatingOccupancyFraction=10" '
-      + 'D:\\VisualStudioCodeProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
+      + 'D:\\IdeaProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
       + '"' + tempFile + '" "' + search_text + '"';
 
     alert("即将执行：" + command)
