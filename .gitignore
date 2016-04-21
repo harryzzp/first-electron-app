@@ -1,5 +1,7 @@
 #
+cache/
 node_modules/
+first-electron-app-win32-x64/
 logs/
 result.log
 
