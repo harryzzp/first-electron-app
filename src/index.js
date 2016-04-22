@@ -14,10 +14,21 @@ var demo_text_path = '';
 window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js')
 
 $(function () {
+  
+  $('#basic_button').click(function() {
+    window.open('basic.html')
+  })
+  
+  
   $('#log_button').click(function () {
     var log_dir = $('#log_dir').val().trim();
     if (log_dir == '') {
       alert('请输入日志路径！');
+      return;
+    }
+    var driver = $('#driver').val().trim();
+    if (driver == '') {
+      alert('请输入spark任务程序路径！');
       return;
     }
     var master = $('#master').val().trim();
@@ -46,7 +57,7 @@ $(function () {
     var tempFile = 'D:\\temp\\' + (new Date().getFullYear() + '.log');
 
     if (fs.existsSync(tempFile)) {
-      alert('删除 ' + tempFile)
+      console.log('删除 ' + tempFile)
       fs.unlinkSync(tempFile);
     }
 
@@ -66,8 +77,7 @@ $(function () {
       + '--conf spark.eventLog.enabled=false '
       + '--conf spark.serializer=org.apache.spark.serializer.KryoSerializer '
       + '--conf spark.executor.extraJavaOptions="-XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit -XX:CMSInitiatingOccupancyFraction=10" '
-      + 'D:\\IdeaProjects\\LogAnalysis\\target\\LogAnalysis-1.0-SNAPSHOT.jar '
-      + '"' + tempFile + '" "' + search_text + '"';
+      + driver + ' "' + tempFile + '" "' + search_text + '"';
 
     alert("即将执行：" + command)
 
@@ -81,9 +91,12 @@ $(function () {
     });
 
     ls.stdout.on('data', function (data) {
-      if (data.indexOf(search_text) != -1) {
-        str = iconv_lite.decode(data, 'gbk');
-        buf = iconv_lite.encode(str, 'utf8');
+      str = iconv_lite.decode(data, 'gbk');
+      buf = iconv_lite.encode(str, 'utf8');
+      console.log(buf.toString())
+      if (buf.indexOf(search_text) != -1) {
+        // str = iconv_lite.decode(data, 'gbk');
+        // buf = iconv_lite.encode(str, 'utf8');
         $('#log_output').append('<p>' + buf + '</p>');
         fs.appendFile("result.log", buf, function (error) {
           if (error) {

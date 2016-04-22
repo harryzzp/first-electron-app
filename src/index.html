@@ -4,47 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <title>研发工具</title>
+
+  <link rel="stylesheet" href="photon/css/photo.min.css">
+
 </head>
 
 <body ng-app="first-electron-app">
-  <h3>日志查询</h3> node.js
-  <script>
-    document.write(process.version)
-  </script>
-  & electron
-  <script>
-    document.write(process.versions['electron'])
-  </script>
+  <div class="window">
+    <div class="window-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>日志查询</h3></div>
+        <div class="col-sm-12">node.js
+          <script>
+            document.write(process.version)
+          </script>
+          & electron
+          <script>
+            document.write(process.versions['electron'])
+          </script>
+        </div>
+      </div>
 
-  <div>
-    日志目录：<input id="log_dir" value="D:\\logss\\newwt" />
-  </div>
-  <div>
-    spark.master：<input id="master" value="local[4]" />
-  </div>
-  <div>
-    spark.driver.memory：<input id="driver_memory" value="6g" />
-  </div>
-  <div>
-    spark.serializer：<input id="spark_serializer" value="org.apache.spark.serializer.KryoSerializer" />
-  </div>
-  <div>
-    搜索内容：<input id="search_text" value="915001" />
-  </div>
-  <div>
-    <button id="log_button">点击开始</button>
-  </div>
-  <div>
-    <button id="chooseFile">选择文件</button> 文件编码：
-    <select id="encoding_list" onchange="changeEncoding(this)">
+      <div>
+        日志目录：<input id="log_dir" value="D:\logss\newwt" />
+      </div>
+      <div>
+        spark任务：<input id="driver" value="D:\IdeaProjects\LogAnalysis\target\LogAnalysis-1.0-SNAPSHOT.jar">
+      </div>
+      <div>
+        spark.master：<input id="master" value="local[4]" />
+      </div>
+      <div>
+        spark.driver.memory：<input id="driver_memory" value="6g" />
+      </div>
+      <div>
+        spark.serializer：<input id="spark_serializer" value="org.apache.spark.serializer.KryoSerializer" />
+      </div>
+      <div>
+        搜索内容：<input id="search_text" value="915001" />
+      </div>
+
+      <div>
+        <button id="log_button">点击开始</button>
+      </div>
+      <div>
+        <button id="basic_button">Photon</button>
+      </div>
+      <div>
+        <button id="chooseFile">选择文件</button> 文件编码：
+        <select id="encoding_list" onchange="changeEncoding(this)">
       <option value="utf8">UTF-8</option>
       <option value="gbk">GBK</option>
     </select>
 
-    <p id="output"></p>
-    <p id="log_output"></p>
+        <p id="output"></p>
+        <p id="log_output"></p>
+      </div>
+    </div>
   </div>
-
   <!--<div>
     <input type="text" ng-model="text"> {{text}}
   </div>-->
