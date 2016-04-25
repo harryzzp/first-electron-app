@@ -8,6 +8,7 @@ var fs = require('fs')
 var iconv_lite = require('iconv-lite')
 var cp = require('child_process')
 var path = require('path')
+var ftp = require('ftp')
 
 var demo_text_path = '';
 
@@ -15,9 +16,9 @@ window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js
 
 $(function () {
   
-  $('#basic_button').click(function() {
-    window.open('basic.html')
-  })
+  // $('#basic_button').click(function() {
+  //   window.open('basic.html')
+  // })
   
   
   $('#log_button').click(function () {
