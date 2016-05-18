@@ -1,4 +1,4 @@
-var remote = require('remote')
+var remote = require('electron').remote
 var Menu = remote.require('menu')
 var MenuItem = remote.require('menu-item')
 

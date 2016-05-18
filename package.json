@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "src/main.js",
   "devDependencies": {
-    "electron-packager": "^7.0.0",
+    "electron-packager": "^7.0.1",
+    "electron-prebuilt": "^1.1.0",
     "ftp": "^0.3.10",
     "graceful-fs": "^4.1.3",
     "gulp": "^3.9.1",

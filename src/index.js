@@ -2,8 +2,8 @@
 //   alert("It's me");
 // })
 
-var remote = require('remote')
-var dialog = remote.require('dialog')
+var remote = require('electron').remote
+const {dialog} = require('electron').remote;
 var fs = require('fs')
 var iconv_lite = require('iconv-lite')
 var cp = require('child_process')
@@ -156,6 +156,6 @@ function changeEncoding(sel) {
 
 }
 
-angular.module('first-electron-app', [])
-  .controller('ctrl', function ($scope) {
-  })
+// angular.module('first-electron-app', [])
+//   .controller('ctrl', function ($scope) {
+//   })

@@ -10,6 +10,7 @@
 		"jspm_packages",
 		"tmp",
 		"temp",
-		"logs"
+		"logs",
+		"first-electron-app-win32-x64"
 	]
 }
